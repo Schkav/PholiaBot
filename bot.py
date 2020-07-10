@@ -10,6 +10,7 @@ from googletrans import Translator
 
 # 1
 from discord.ext import commands
+import discord
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -97,9 +98,13 @@ You got {}```""".format(draw))
     await ctx.send(''.join(message))
 
 
-@bot.command(name='feedback', help='For feedback or bug report', aliases=['bugreport'])
-async def feedback(ctx):
-    response = "For feedback or bug report, please contact Schkav#9907"
+@bot.command(name='feedback', help='Send feedback or bug report message to bot owner', aliases=['bugreport'], pass_context=True)
+async def feedback(ctx, *messages):
+    feedback_message = " ".join(messages)
+    response = """
+Your feedback has been sent to Schkav#9907.
+Thank you for your feedback!"""
+    await bot.get_user(209998612594294784).send("{} from {}".format(feedback_message, ctx.message.author))
     await ctx.send(response)
 
 
