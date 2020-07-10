@@ -1,0 +1,26 @@
+Ver 1.1
+11/07/2020
+
+-Updated spark command with default value of 0 for each parameters.
+-Updated skill level 20 value of massive EX mod to weapon skills command.
+-Updated weapon skill command to take in parameter "EX", "Xeno" and "Astral".
+-Removed the 50% bonus damage on Verity, Restraint and Celere weapon skill table and updated their description.
+-Changed translate command languange check from "to" into ">".
+-Added Abby, Kolulu (Summer), Leona (Grand), Athena (Summer) and Mammoth to Gacha SSR list.
+
+
+Ver 1.0
+09/05/2020
+
+Initial commit with the following commands:
+-choice    Return random choice from input
+-crew      Search for crew by [ID]
+-feedback  For feedback or bug report
+-player    Search for player by [ID]
+-roll      A single roll when you're scraping for crystal
+-roll10    Do a 10 roll and hope you get bol
+-roll?     Return 50:50 yes or no
+-spark     Calculate spark
+-translate Translate [text] to [language]. Default is translate to English
+-wepskill  Return values of weapon skills
+

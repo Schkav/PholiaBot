@@ -23,7 +23,7 @@ async def on_ready():
 
 
 @bot.command(name='spark', help='Calculate spark')
-async def spark(ctx, crystal: int, ten_draws: int, single_draw: int):
+async def spark(ctx, crystal=0, ten_draws=0, single_draw=0):
     crystal_rolls = crystal//300
     ten_draws_rolls = ten_draws * 10
     total_rolls = crystal_rolls + ten_draws_rolls + single_draw
@@ -116,22 +116,21 @@ async def crew(ctx, id):
     await ctx.send(response)
     
 
-@bot.command(name='translate', help='Translate [text] to [language]. Default is translate to English', aliases=['tl'])
+@bot.command(name='translate', help='Translate [text] > [language]. Default is translate to English if without ">" sign', aliases=['tl'])
 async def translate(ctx, *texts):
     translator = Translator()
-    joined_text = "".join(texts)
+    joined_text = " ".join(texts).lower()
     lan_choice = False
     for text in texts:
-        if text == "to":
+        if text.lower() == ">":
             lan_choice = True
     if lan_choice:
-        split_text = joined_text.split('to')
-        language = split_text[-1]
+        split_text = joined_text.split('>')
+        language = split_text[-1].strip()
         text_to_translate = split_text[0]
     else:
         language = "english"
         text_to_translate = joined_text
-    print(text_to_translate)
     translated_text = translator.translate(str(text_to_translate), dest=str(language))
     await ctx.send(translated_text.text)
 

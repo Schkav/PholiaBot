@@ -151,7 +151,8 @@ ssr_list = [["Thunder Dirk Jove", "Agielba", FIRE],
             ["Starblaze Rings", "Zahlhamelina", FIRE],
             ["Brionac", "Zeta", FIRE],
             ["Sunspot Spear", "Zeta", DARK],
-            ["Ruler of Fate", "Zooey", LIGHT]
+            ["Ruler of Fate", "Zooey", LIGHT],
+            ["Tiny Logger;s Axe", "Abby", FIRE]
             ]
 
 flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
@@ -183,7 +184,8 @@ legfest_list = [["Ichigo Hitofuri", "Cain", EARTH],
                 ["Benedia", "Rackam", FIRE],
                 ["Sunya", "Rei", DARK],
                 ["Fist of Destruction", "Reinhardtzar", FIRE],
-                ["Love Eternal", "Rosetta (Grand)", WIND]
+                ["Love Eternal", "Rosetta (Grand)", WIND],
+                ["Yahata's Naginata", "Leona (Grand)", EARTH]
                 ]
 
 zodiac_list = [["Dormius", "Andira", WIND],
@@ -227,7 +229,8 @@ summer_list = [["Nibelung Glas", "Alexiel (Summer)", EARTH],
                ["Tropical Fairy", "Teena (Summer)", FIRE],
                ["Deep Desire", "Vira (Summer)", EARTH],
                ["Crimson Sapphire", "Yuel (Summer)", WIND],
-               ["Cletine", "Zeta (Summer)", LIGHT]
+               ["Cletine", "Zeta (Summer)", LIGHT],
+               ["Much Ado", "Kolulu (Summer)", WATER]
                ]
 
 halloween_list = [["Ouroboros Treat", "Cagliostro (Halloween)", DARK],
@@ -326,6 +329,7 @@ ssr_summon_list = [["Adramelech", LIGHT],
                    ["Typhon", DARK],
                    ["Vortex Dragon", LIGHT],
                    ["Zaoshen", FIRE],
+                   ["Mammoth", EARTH],
 
                    ["Agni", FIRE],
                    ["Bahamut", DARK],
@@ -354,7 +358,8 @@ ssr_summon_list = [["Adramelech", LIGHT],
 summer_summon_list = [["Macula Marius (Summer)", WATER],
                       ["Rose Queen (Summer)", WIND],
                       ["Satyr (Summer)", FIRE],
-                      ["Yggdrasil (Summer)", EARTH]
+                      ["Yggdrasil (Summer)", EARTH],
+                      ["Athena (Summer)", FIRE]
                       ]
 
 SSR_RATE = 0.03
