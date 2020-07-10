@@ -2,6 +2,7 @@
 
 import os
 import random
+import pycountry
 from weapon_skills import WeaponSkills
 from gacha import Gacha
 from dotenv import load_dotenv
@@ -126,7 +127,10 @@ async def translate(ctx, *texts):
             lan_choice = True
     if lan_choice:
         split_text = joined_text.split('>')
-        language = split_text[-1].strip()
+        language_code = pycountry.languages.get(name=split_text[-1].strip())
+        language = language_code.alpha_2
+        if split_text[-1].strip().lower() == "chinese":
+            language = "zh-CN"
         text_to_translate = split_text[0]
     else:
         language = "english"

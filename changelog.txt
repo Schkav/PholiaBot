@@ -1,3 +1,8 @@
+Ver 1.1.1
+11/07/2020
+
+-Updated translate command language check to use ISO-639-1 language code as target language.
+
 Ver 1.1
 11/07/2020
 
@@ -7,7 +12,6 @@ Ver 1.1
 -Removed the 50% bonus damage on Verity, Restraint and Celere weapon skill table and updated their description.
 -Changed translate command languange check from "to" into ">".
 -Added Abby, Kolulu (Summer), Leona (Grand), Athena (Summer) and Mammoth to Gacha SSR list.
-
 
 Ver 1.0
 09/05/2020
