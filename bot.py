@@ -58,9 +58,9 @@ async def choice(ctx, *choices):
 
 
 @bot.command(name='roll', help='A single roll when you\'re scraping for crystal')
-async def roll1(ctx, banner=""):
+async def roll1(ctx, *banners):
     gacha = Gacha()
-    gacha.set_pool(banner)
+    gacha.set_pool(banners)
     results = gacha.get_single()
     if results in gacha.ssr_summon_pool:
         message = """```yaml
@@ -77,10 +77,10 @@ You got {}```""".format(results)
 
 
 @bot.command(name='roll10', help='Do a 10 roll and hope you get bol')
-async def roll10(ctx, banner=""):
+async def roll10(ctx, *banners):
     message = []
     gacha = Gacha()
-    gacha.set_pool(banner)
+    gacha.set_pool(banners)
     results = gacha.get_ten()
     for draw in results:
         if draw in gacha.ssr_summon_pool:

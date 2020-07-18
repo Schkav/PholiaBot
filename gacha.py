@@ -152,7 +152,7 @@ ssr_list = [["Thunder Dirk Jove", "Agielba", FIRE],
             ["Brionac", "Zeta", FIRE],
             ["Sunspot Spear", "Zeta", DARK],
             ["Ruler of Fate", "Zooey", LIGHT],
-            ["Tiny Logger;s Axe", "Abby", FIRE]
+            ["Tiny Logger's Axe", "Abby", FIRE]
             ]
 
 flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
@@ -230,7 +230,9 @@ summer_list = [["Nibelung Glas", "Alexiel (Summer)", EARTH],
                ["Deep Desire", "Vira (Summer)", EARTH],
                ["Crimson Sapphire", "Yuel (Summer)", WIND],
                ["Cletine", "Zeta (Summer)", LIGHT],
-               ["Much Ado", "Kolulu (Summer)", WATER]
+               ["Much Ado", "Kolulu (Summer)", WATER],
+               ["Dayspring", "Lucio (Summer)", WATER],
+               ["Summer Genesis", "Amira (Summer)", DARK]
                ]
 
 halloween_list = [["Ouroboros Treat", "Cagliostro (Halloween)", DARK],
@@ -362,9 +364,10 @@ summer_summon_list = [["Macula Marius (Summer)", WATER],
                       ["Athena (Summer)", FIRE]
                       ]
 
-SSR_RATE = 0.03
+#SSR_RATE = 0.03
 SR_RATE = 0.15
 R_RATE = 0.82
+SSR_RATE = 1
 
 
 class Gacha:
@@ -378,34 +381,35 @@ class Gacha:
         self.ssr_rate = SSR_RATE
         self.ssr_summon_pool = ssr_summon_list + summer_summon_list
 
-    def set_pool(self, pool=""):
+    def set_pool(self, pools):
         self.ssr_rate = SSR_RATE
         self.ssr_pool = ssr_list + ssr_summon_list
-        if pool.lower() == "valentine" or \
-           pool.lower() == "val":
-            self.ssr_pool = self.ssr_pool + valentine_list
-        elif pool.lower() == "summer" or \
-             pool.lower() == "sum":
-            self.ssr_pool = self.ssr_pool + summer_list + summer_summon_list
-        elif pool.lower() == "xmas" or \
-             pool.lower() == "christmas" or \
-             pool.lower() == "holiday":
-            self.ssr_pool = self.ssr_pool + xmas_list
-        elif pool.lower() == "halloween" or \
-             pool.lower() == "hal":
-            self.ssr_pool = self.ssr_pool + halloween_list
-        elif pool.lower() == "leg" or \
-             pool.lower() == "legfes" or \
-             pool.lower() == "legfest":
-            self.ssr_pool = self.ssr_pool + legfest_list + zodiac_list
-            self.ssr_rate = SSR_RATE * 2
-        elif pool.lower() == "flash" or \
-             pool.lower() == "flashfest" or \
-             pool.lower() == "flashfes":
-            self.ssr_pool = self.ssr_pool + flashfest_list
-            self.ssr_rate = SSR_RATE * 2
-        else:
-            self.ssr_pool = self.ssr_pool
+        for pool in pools:
+            if pool.lower() == "valentine" or \
+                    pool.lower() == "val":
+                self.ssr_pool = self.ssr_pool + valentine_list
+            elif pool.lower() == "summer" or \
+                    pool.lower() == "sum":
+                self.ssr_pool = self.ssr_pool + summer_list + summer_summon_list
+            elif pool.lower() == "xmas" or \
+                    pool.lower() == "christmas" or \
+                    pool.lower() == "holiday":
+                self.ssr_pool = self.ssr_pool + xmas_list
+            elif pool.lower() == "halloween" or \
+                    pool.lower() == "hal":
+                self.ssr_pool = self.ssr_pool + halloween_list
+            elif pool.lower() == "leg" or \
+                    pool.lower() == "legfes" or \
+                    pool.lower() == "legfest":
+                self.ssr_pool = self.ssr_pool + legfest_list + zodiac_list
+                self.ssr_rate = SSR_RATE * 2
+            elif pool.lower() == "flash" or \
+                    pool.lower() == "flashfest" or \
+                    pool.lower() == "flashfes":
+                self.ssr_pool = self.ssr_pool + flashfest_list
+                self.ssr_rate = SSR_RATE * 2
+            else:
+                self.ssr_pool = self.ssr_pool
 
     def get_single(self):
         if random.uniform(0, 1) < self.ssr_rate:

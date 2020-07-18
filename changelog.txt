@@ -1,3 +1,9 @@
+Ver 1.1.3
+18/07/2020
+
+-Added Lucio (Summer) and Abby (Summer) to Gacha SSR list.
+-Updated roll and roll10 command to support multiple banner in a roll.
+
 Ver 1.1.2
 11/07/2020
 
