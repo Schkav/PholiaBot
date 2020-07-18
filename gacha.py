@@ -364,10 +364,9 @@ summer_summon_list = [["Macula Marius (Summer)", WATER],
                       ["Athena (Summer)", FIRE]
                       ]
 
-#SSR_RATE = 0.03
+SSR_RATE = 0.03
 SR_RATE = 0.15
 R_RATE = 0.82
-SSR_RATE = 1
 
 
 class Gacha:
