@@ -149,5 +149,6 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.BadArgument):
         await ctx.send('Invalid parameters. See %help for correct parameters.')
 
+
 bot.run(TOKEN)
 

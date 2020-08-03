@@ -232,7 +232,9 @@ summer_list = [["Nibelung Glas", "Alexiel (Summer)", EARTH],
                ["Cletine", "Zeta (Summer)", LIGHT],
                ["Much Ado", "Kolulu (Summer)", WATER],
                ["Dayspring", "Lucio (Summer)", WATER],
-               ["Summer Genesis", "Amira (Summer)", DARK]
+               ["Summer Genesis", "Amira (Summer)", DARK],
+               ["Eight Point of the Flock", "Anila (Summer)", WIND],
+               ["Official's Jitte", "Rosamia (Summer)", LIGHT]
                ]
 
 halloween_list = [["Ouroboros Treat", "Cagliostro (Halloween)", DARK],
@@ -361,7 +363,8 @@ summer_summon_list = [["Macula Marius (Summer)", WATER],
                       ["Rose Queen (Summer)", WIND],
                       ["Satyr (Summer)", FIRE],
                       ["Yggdrasil (Summer)", EARTH],
-                      ["Athena (Summer)", FIRE]
+                      ["Athena (Summer)", FIRE],
+                      ["Freyr (Summer)", EARTH]
                       ]
 
 SSR_RATE = 0.03
@@ -406,6 +409,10 @@ class Gacha:
                     pool.lower() == "flashfest" or \
                     pool.lower() == "flashfes":
                 self.ssr_pool = self.ssr_pool + flashfest_list
+                self.ssr_rate = SSR_RATE * 2
+            elif pool.lower() == "all":
+                self.ssr_pool = self.ssr_pool + flashfest_list + legfest_list + zodiac_list + \
+                                summer_list + summer_summon_list + xmas_list + halloween_list
                 self.ssr_rate = SSR_RATE * 2
             else:
                 self.ssr_pool = self.ssr_pool
