@@ -1,3 +1,9 @@
+Ver 1.1.4
+03/08/2020
+
+-Added Anila (Summer), Rosamia (Summer) and Freyr (Summer) to Gacha SSR list.
+-Added "all" banner to roll and roll10 command to include all banners.
+
 Ver 1.1.3
 18/07/2020
 
