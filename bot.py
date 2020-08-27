@@ -5,6 +5,7 @@ import random
 import pycountry
 from weapon_skills import WeaponSkills
 from gacha import Gacha
+from gwbox import GwBox
 from dotenv import load_dotenv
 from googletrans import Translator
 
@@ -142,6 +143,14 @@ async def translate(ctx, *texts):
         text_to_translate = joined_text
     translated_text = translator.translate(str(text_to_translate), dest=str(language))
     await ctx.send(translated_text.text)
+
+
+@bot.command(name='gwbox', help='Calculate how many boxes you can open by [tokens]', aliases=['box'])
+async def gwbox(ctx, tokens: int):
+    box = GwBox()
+    boxes_count = box.calculate_box(tokens)
+    response = "You can open {} boxes with {} tokens left".format(boxes_count[0], boxes_count[1])
+    await ctx.send(response)
 
 
 @bot.event
