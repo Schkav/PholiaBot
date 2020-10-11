@@ -1,3 +1,7 @@
+Ver 1.2.1
+11/10/2020
+-Added Juliet (Water), Diantha (Earth), Golden Knight, Florence, Gawain (Light) and Zirnitra to Gacha SSR list.
+
 Ver 1.2.0
 27/08/2020
 -Added "gwbox" or "box" command to calculate how many boxes you can open by [tokens].

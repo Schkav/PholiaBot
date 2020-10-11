@@ -152,7 +152,11 @@ ssr_list = [["Thunder Dirk Jove", "Agielba", FIRE],
             ["Brionac", "Zeta", FIRE],
             ["Sunspot Spear", "Zeta", DARK],
             ["Ruler of Fate", "Zooey", LIGHT],
-            ["Tiny Logger's Axe", "Abby", FIRE]
+            ["Tiny Logger's Axe", "Abby", FIRE],
+            ["Ophelia", "Juliet (Water)", WATER],
+            ["Brand New Melody", "Diantha (Earth)", EARTH],
+            ["Disturbance Signum", "Florence", WIND],
+            ["Tabarzin", "Gawain (Light)", LIGHT]
             ]
 
 flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
@@ -169,7 +173,8 @@ flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
                   ["Purifying Thunderbolt", "Shiva", FIRE],
                   ["Ixaba", "Sturm (Grand)", FIRE],
                   ["Certificus", "Vira (Grand)", LIGHT],
-                  ["Cute Ribbon", "Zooey (Grand)", DARK]
+                  ["Cute Ribbon", "Zooey (Grand)", DARK],
+                  ["Cerastes", "Golden Knight", EARTH]
                   ]
 
 legfest_list = [["Ichigo Hitofuri", "Cain", EARTH],
@@ -337,6 +342,7 @@ ssr_summon_list = [["Adramelech", LIGHT],
                    ["Vortex Dragon", LIGHT],
                    ["Zaoshen", FIRE],
                    ["Mammoth", EARTH],
+                   ["Zirnitra", DARK],
 
                    ["Agni", FIRE],
                    ["Bahamut", DARK],
