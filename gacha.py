@@ -156,7 +156,17 @@ ssr_list = [["Thunder Dirk Jove", "Agielba", FIRE],
             ["Ophelia", "Juliet (Water)", WATER],
             ["Brand New Melody", "Diantha (Earth)", EARTH],
             ["Disturbance Signum", "Florence", WIND],
-            ["Tabarzin", "Gawain (Light)", LIGHT]
+            ["Tabarzin", "Gawain (Light)", LIGHT],
+            ["Innocent Doll", "Mireille and Risette", EARTH],
+            ["Aurora Bow", "Sutera", WIND],
+            ["Barbell", "Fiorito", EARTH],
+            ["Hope-Filled Knuckles", "Feather", LIGHT],
+            ["Whitefrost Glacier", "Filene", WATER],
+            ["Gigante Bisector", "Nicholas (Light)", LIGHT],
+            ["Woodland Prayer", "Mishra", LIGHT],
+            ["Miming's Baselard", "Zehek", DARK],
+            ["Heart of a Songbird", "Lamretta", EARTH],
+            ["Raijodo", "Nectar", WIND]
             ]
 
 flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
@@ -174,7 +184,8 @@ flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
                   ["Ixaba", "Sturm (Grand)", FIRE],
                   ["Certificus", "Vira (Grand)", LIGHT],
                   ["Cute Ribbon", "Zooey (Grand)", DARK],
-                  ["Cerastes", "Golden Knight", EARTH]
+                  ["Cerastes", "Golden Knight", EARTH],
+                  ["World Ender", "Sandalphon", EARTH]
                   ]
 
 legfest_list = [["Ichigo Hitofuri", "Cain", EARTH],
@@ -190,7 +201,8 @@ legfest_list = [["Ichigo Hitofuri", "Cain", EARTH],
                 ["Sunya", "Rei", DARK],
                 ["Fist of Destruction", "Reinhardtzar", FIRE],
                 ["Love Eternal", "Rosetta (Grand)", WIND],
-                ["Yahata's Naginata", "Leona (Grand)", EARTH]
+                ["Yahata's Naginata", "Leona (Grand)", EARTH],
+                ["Ouroboros Prime", "Cagliostro (Grand)", LIGHT]
                 ]
 
 zodiac_list = [["Dormius", "Andira", WIND],
@@ -198,7 +210,8 @@ zodiac_list = [["Dormius", "Andira", WIND],
                ["Porculius", "Kumbhira", LIGHT],
                ["Gallinarius", "Mahira", EARTH],
                ["Canisius", "Vajra", WATER],
-               ["Rodentius", "Vikala", DARK]
+               ["Rodentius", "Vikala", DARK],
+               ["Bovinius", "Catura", WIND]
                ]
 
 valentine_list = [["Silphium", "Clarisse (Valentine)", DARK],
@@ -251,7 +264,9 @@ halloween_list = [["Ouroboros Treat", "Cagliostro (Halloween)", DARK],
                   ["Nightmare Mobilizer", "Eustace (Halloween)", EARTH],
                   ["Spirit Seeker", "Hallessena (Halloween)", LIGHT],
                   ["Distant Requiem", "Lady Grey (Halloween)", DARK],
-                  ["Enchanted Broomstick", "Zeta and Vaseraga (Halloween)", EARTH]
+                  ["Enchanted Broomstick", "Zeta and Vaseraga (Halloween)", EARTH],
+                  ["Trick Serpent", "Azazel (Halloween)", FIRE],
+                  ["Midnight Rose", "Rosetta (Halloween)", WATER]
                   ]
 
 xmas_list = [["Stardust Holly Rod", "Arulumaya (Holiday)", WATER],
@@ -262,7 +277,10 @@ xmas_list = [["Stardust Holly Rod", "Arulumaya (Holiday)", WATER],
              ["Pinkie Needle", "Metera (Holiday)", LIGHT],
              ["Blade of Purification", "Narmaya (Holiday)", EARTH],
              ["Rosen Maiden", "Rosetta (Holiday)", DARK],
-             ["Brand of Binding Oath", "Seruel (Holiday)", WIND]
+             ["Brand of Binding Oath", "Seruel (Holiday)", WIND],
+             ["Tropical Winter", "Nemone (Holiday)", FIRE],
+             ["Snowbane", "Mirin (Holiday)", WATER],
+             ["Saintly Crystal", "Lily (Holiday)", LIGHT]
              ]
 
 sr_list = ["SR character",
@@ -365,7 +383,9 @@ ssr_summon_list = [["Adramelech", LIGHT],
                    ["Uriel", EARTH],
                    ["Varuna", WATER],
                    ["Zepyhrus", WIND],
-                   ["Zeus", LIGHT]
+                   ["Zeus", LIGHT],
+                   ["Zirnitra", DARK],
+                   ["Tsuchinoko", EARTH]
                    ]
 
 summer_summon_list = [["Macula Marius (Summer)", WATER],
@@ -376,6 +396,9 @@ summer_summon_list = [["Macula Marius (Summer)", WATER],
                       ["Freyr (Summer)", EARTH],
                       ["Kaguya (Summer)", LIGHT]
                       ]
+
+xmas_summon_list = [["Sariel (Holiday)", DARK]
+                    ]
 
 SSR_RATE = 0.03
 SR_RATE = 0.15
@@ -406,7 +429,7 @@ class Gacha:
             elif pool.lower() == "xmas" or \
                     pool.lower() == "christmas" or \
                     pool.lower() == "holiday":
-                self.ssr_pool = self.ssr_pool + xmas_list
+                self.ssr_pool = self.ssr_pool + xmas_list + xmas_summon_list
             elif pool.lower() == "halloween" or \
                     pool.lower() == "hal":
                 self.ssr_pool = self.ssr_pool + halloween_list

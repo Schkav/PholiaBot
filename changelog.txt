@@ -1,3 +1,7 @@
+Ver 1.2.2
+13/02/2021
+-Updated Gacha list to current available list (13/02/2021)
+
 Ver 1.2.1
 11/10/2020
 -Added Juliet (Water), Diantha (Earth), Golden Knight, Florence, Gawain (Light) and Zirnitra to Gacha SSR list.
