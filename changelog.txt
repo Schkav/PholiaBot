@@ -1,3 +1,7 @@
+Ver 1.2.3
+15/02/2021
+-Added Monika (Valentine) and Aglovale (Valentine) to Gacha pool.
+
 Ver 1.2.2
 13/02/2021
 -Updated Gacha list to current available list (13/02/2021)

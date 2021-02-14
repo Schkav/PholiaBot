@@ -218,7 +218,9 @@ valentine_list = [["Silphium", "Clarisse (Valentine)", DARK],
                   ["Lupercalia", "Grimnir (Valentine)", WIND],
                   ["Medusiana Staff", "Medusa (Valentine)", EARTH],
                   ["Sword on the Cob", "Melissabelle (Valentine)", LIGHT],
-                  ["Deirdre's Heart", "Scathacha (Valentine)", FIRE]
+                  ["Deirdre's Heart", "Scathacha (Valentine)", FIRE],
+                  ["Lovely Ace", "Monika (Valentine)", EARTH],
+                  ["Wales' Finest", "Aglovale (Valentine)", LIGHT]
                   ]
 
 summer_list = [["Nibelung Glas", "Alexiel (Summer)", EARTH],
