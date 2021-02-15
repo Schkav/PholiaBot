@@ -402,6 +402,8 @@ summer_summon_list = [["Macula Marius (Summer)", WATER],
 xmas_summon_list = [["Sariel (Holiday)", DARK]
                     ]
 
+# Rates
+LIMITED_RATE_UP = 0.025
 SSR_RATE = 0.03
 SR_RATE = 0.15
 R_RATE = 0.82
@@ -410,44 +412,51 @@ R_RATE = 0.82
 class Gacha:
 
     def __init__(self):
-        self.ssr_pool = {}
+        self.ssr_chara_pool = ssr_list
         self.sr_pool = sr_list
         self.r_pool = r_list
         self.draw_result = {}
         self.draw_message = []
         self.ssr_rate = SSR_RATE
-        self.ssr_summon_pool = ssr_summon_list + summer_summon_list
+        self.limited_pool = []
+        self.ssr_perm_pool = ssr_list + ssr_summon_list
+        self.ssr_summon_pool = ssr_summon_list + summer_summon_list + xmas_summon_list
 
     def set_pool(self, pools):
+        """
+        Set the gacha pool according to banners pools inputted
+        And set the SSR rate according to banner pools inputted
+        """
         self.ssr_rate = SSR_RATE
-        self.ssr_pool = ssr_list + ssr_summon_list
+        self.limited_pool = []
         for pool in pools:
+            # iterate through each banner to add to the total pool
             if pool.lower() == "valentine" or \
                     pool.lower() == "val":
-                self.ssr_pool = self.ssr_pool + valentine_list
+                self.limited_pool += valentine_list
             elif pool.lower() == "summer" or \
                     pool.lower() == "sum":
-                self.ssr_pool = self.ssr_pool + summer_list + summer_summon_list
+                self.limited_pool = self.limited_pool + summer_list + summer_summon_list
             elif pool.lower() == "xmas" or \
                     pool.lower() == "christmas" or \
                     pool.lower() == "holiday":
-                self.ssr_pool = self.ssr_pool + xmas_list + xmas_summon_list
+                self.limited_pool = self.limited_pool + xmas_list + xmas_summon_list
             elif pool.lower() == "halloween" or \
                     pool.lower() == "hal":
-                self.ssr_pool = self.ssr_pool + halloween_list
+                self.limited_pool += halloween_list
             elif pool.lower() == "leg" or \
                     pool.lower() == "legfes" or \
                     pool.lower() == "legfest":
-                self.ssr_pool = self.ssr_pool + legfest_list + zodiac_list
+                self.limited_pool = self.limited_pool + legfest_list + zodiac_list
                 self.ssr_rate = SSR_RATE * 2
             elif pool.lower() == "flash" or \
                     pool.lower() == "flashfest" or \
                     pool.lower() == "flashfes":
-                self.ssr_pool = self.ssr_pool + flashfest_list
+                self.limited_pool = self.limited_pool + flashfest_list
                 self.ssr_rate = SSR_RATE * 2
             elif pool.lower() == "all":
-                self.ssr_pool = self.ssr_pool + flashfest_list + legfest_list + zodiac_list + \
-                                summer_list + summer_summon_list + xmas_list + halloween_list
+                self.limited_pool = self.limited_pool + flashfest_list + legfest_list + zodiac_list + \
+                                summer_list + summer_summon_list + xmas_list + halloween_list + xmas_summon_list
                 self.ssr_rate = SSR_RATE * 2
             elif pool.lower() == "mukku":
                 self.ssr_rate = SSR_RATE * 5
@@ -455,23 +464,52 @@ class Gacha:
                  pool.lower() == "100%":
                 self.ssr_rate = 1
             else:
-                self.ssr_pool = self.ssr_pool
+                self.ssr_perm_pool = self.ssr_perm_pool
 
     def get_single(self):
-        if random.uniform(0, 1) < self.ssr_rate:
-            return random.choice(list(self.ssr_pool))
-        elif random.uniform(0, 1) < SR_RATE:
-            return random.choice(list(self.sr_pool))
+        """
+        Do a single roll
+        If there is limited banner, rate up for limited banner will be applied
+        """
+        if self.limited_pool:
+            if random.random() < LIMITED_RATE_UP:
+                return random.choice(list(self.limited_pool))
+            elif random.random() < (self.ssr_rate - LIMITED_RATE_UP):
+                return random.choice(list(self.ssr_perm_pool))
+            elif random.random() < SR_RATE:
+                return random.choice(list(self.sr_pool))
+            else:
+                return random.choice(list(self.r_pool))
         else:
-            return random.choice(list(self.r_pool))
+            if random.random() < self.ssr_rate:
+                return random.choice(list(self.ssr_perm_pool))
+            elif random.random() < SR_RATE:
+                return random.choice(list(self.sr_pool))
+            else:
+                return random.choice(list(self.r_pool))
 
     def get_last_draw(self):
-        if random.uniform(0, 1) < self.ssr_rate:
-            return random.choice(list(self.ssr_pool))
+        """
+        Last draw of a 10 roll with SR and up
+        """
+        if self.limited_pool:
+            if random.random() < LIMITED_RATE_UP:
+                return random.choice(list(self.limited_pool))
+            elif random.random() < (self.ssr_rate - LIMITED_RATE_UP):
+                return random.choice(list(self.ssr_perm_pool))
+            else:
+                return random.choice(list(self.sr_pool))
         else:
-            return random.choice(list(self.sr_pool))
+            if random.random() < self.ssr_rate:
+                return random.choice(list(self.ssr_perm_pool))
+            else:
+                return random.choice(list(self.sr_pool))
 
     def get_ten(self):
+        """
+        Do single draw 9x + 1x last draw and add them to draw_result
+        Then return draw_result
+        """
         self.draw_result = []
         count = 1
         for i in range(10):

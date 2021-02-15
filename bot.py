@@ -62,18 +62,22 @@ async def choice(ctx, *choices):
 async def roll1(ctx, *banners):
     gacha = Gacha()
     gacha.set_pool(banners)
-    results = gacha.get_single()
-    if results in gacha.ssr_summon_pool:
+    draw = gacha.get_single()
+
+    if draw in gacha.ssr_summon_pool:
         message = """```yaml
-You got {}```""".format(*results)
-    elif results in gacha.ssr_pool:
+You got {}```""".format(*draw)
+
+    elif draw in gacha.ssr_chara_pool or draw in gacha.limited_pool:
         message = """```yaml
 You got the {}
 {} joined your party!
-```""".format(*results)
+```""".format(*draw)
+
     else:
         message = """```brainfuck
-You got {}```""".format(results)
+You got {}```""".format(draw)
+
     await ctx.send(message)
 
 
@@ -83,19 +87,25 @@ async def roll10(ctx, *banners):
     gacha = Gacha()
     gacha.set_pool(banners)
     results = gacha.get_ten()
+
     for draw in results:
         if draw in gacha.ssr_summon_pool:
             message.append("""```yaml
 You got {}```""".format(*draw))
-        elif draw in gacha.ssr_pool:
+
+        elif draw in gacha.ssr_chara_pool or draw in gacha.limited_pool:
             message.append("""```yaml
 You got the {}
 {} joined your party!
 ```""".format(*draw))
 
+        elif draw in gacha.sr_pool:
+            message.append("""```You got {}```""".format(draw))
+
         else:
             message.append("""```brainfuck
 You got {}```""".format(draw))
+
     await ctx.send(''.join(message))
 
 
@@ -103,7 +113,7 @@ You got {}```""".format(draw))
 async def feedback(ctx, *messages):
     feedback_message = " ".join(messages)
     response = """
-Your feedback has been sent to Schkav#9907.
+Your feedback has been sent to Schkav#9999.
 Thank you for your feedback!"""
     await bot.get_user(209998612594294784).send("{} from {}".format(feedback_message, ctx.message.author))
     await ctx.send(response)
