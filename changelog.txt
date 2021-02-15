@@ -1,3 +1,9 @@
+Ver 1.2.4
+15/02/2021
+-Updated gacha mechanic to rate up the limited banners.
+-Changed random.uniform() to random.random() for gacha roll.
+-Changed text for SR pull to white.
+
 Ver 1.2.3
 15/02/2021
 -Added Monika (Valentine) and Aglovale (Valentine) to Gacha pool.
