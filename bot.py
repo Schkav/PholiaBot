@@ -74,6 +74,9 @@ You got the {}
 {} joined your party!
 ```""".format(*draw)
 
+    elif draw in gacha.sr_pool:
+        message = """```You got {}```""".format(draw)
+
     else:
         message = """```brainfuck
 You got {}```""".format(draw)
