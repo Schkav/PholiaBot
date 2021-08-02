@@ -166,43 +166,59 @@ ssr_list = [["Thunder Dirk Jove", "Agielba", FIRE],
             ["Woodland Prayer", "Mishra", LIGHT],
             ["Miming's Baselard", "Zehek", DARK],
             ["Heart of a Songbird", "Lamretta", EARTH],
-            ["Raijodo", "Nectar", WIND]
+            ["Raijodo", "Nectar", WIND],
+            ["Grynoth Demiclone", "Vaseraga (Fire)", FIRE],
+            ["Arvess Demiclone", "Zeta (Water)", WATER],
+            ["Bravery", "Farrah and Juri", LIGHT],
+            ["Plasma Slicer", "Isaac", WATER],
+            ["Embrasque Demiclone", "Beatrix (Earth)", EARTH],
+            ["Bonsai Blade", "Shion", FIRE],
+            ["Flamelance: Accendo", "Nezha", WIND],
+            ["Schwarz Lightning", "Albert (Dark)", DARK],
+            ["Reveiller", "Troue", WATER],
+            ["Lancet", "Tikoh", LIGHT],
+            ["Charming Broom", "Ms. Miranda", FIRE],
+            ["Destiny Knuckles", "Sho", WIND],
+            ["Merveilleux", "Lennah (Earth)", EARTH],
             ]
 
-flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
-                  ["Blutgang", "Black Knight", DARK],
+flashfest_list = [["Mirror-Blade Shard", "Alexiel (Grand)", EARTH],
+                  ["Blutgang", "Black Knight (Grand)", DARK],
                   ["Blue Sphere", "Drang (Grand)", WATER],
-                  ["Galilei's Insight", "Europa", WATER],
-                  ["Vortex of the Void", "Grimnir", WIND],
-                  ["Bab-el-Mandeb", "Helel ben Shalem", DARK],
+                  ["Galilei's Insight", "Europa (Grand)", WATER],
+                  ["Vortex of the Void", "Grimnir (Grand)", WIND],
+                  ["Bab-el-Mandeb", "Helel ben Shalem (Grand)", DARK],
                   ["Sacred Standard", "Jeanne d'Arc (Grand)", LIGHT],
-                  ["Eden", "Lucio", LIGHT],
-                  ["Kerak", "Mugen", FIRE],
-                  ["Fallen Sword", "Olivia", DARK],
-                  ["Parazonium", "Orchid", DARK],
-                  ["Purifying Thunderbolt", "Shiva", FIRE],
+                  ["Eden", "Lucio (Grand)", LIGHT],
+                  ["Kerak", "Mugen (Grand)", FIRE],
+                  ["Fallen Sword", "Olivia (Grand)", DARK],
+                  ["Parazonium", "Orchid (Grand)", DARK],
+                  ["Purifying Thunderbolt", "Shiva (Grand)", FIRE],
                   ["Ixaba", "Sturm (Grand)", FIRE],
                   ["Certificus", "Vira (Grand)", LIGHT],
                   ["Cute Ribbon", "Zooey (Grand)", DARK],
-                  ["Cerastes", "Golden Knight", EARTH],
-                  ["World Ender", "Sandalphon", EARTH]
+                  ["Cerastes", "Golden Knight (Grand)", EARTH],
+                  ["World Ender", "Sandalphon (Grand)", EARTH],
+                  ["Radiant Rinne", "Nehan (Grand)", LIGHT]
                   ]
 
-legfest_list = [["Ichigo Hitofuri", "Cain", EARTH],
-                ["AK-4A", "Eugen", EARTH],
+legfest_list = [["Ichigo Hitofuri", "Cain (Grand)", EARTH],
+                ["AK-4A", "Eugen (Grand)", EARTH],
                 ["Unheil", "Ferry (Grand)", DARK],
                 ["Gambanteinn", "Io (Grand)", LIGHT],
                 ["Murgleis", "Katalina (Grand)", WATER],
                 ["Reunion", "Lecia (Grand)", WIND],
                 ["Sky Ace", "Monika (Grand)", WIND],
-                ["Ivory Ark", "Noa", LIGHT],
-                ["Taisai Spirit Bow", "Pholia", WATER],
-                ["Benedia", "Rackam", FIRE],
-                ["Sunya", "Rei", DARK],
-                ["Fist of Destruction", "Reinhardtzar", FIRE],
+                ["Ivory Ark", "Noa (Grand)", LIGHT],
+                ["Taisai Spirit Bow", "Pholia (Grand)", WATER],
+                ["Benedia", "Rackam (Grand)", FIRE],
+                ["Sunya", "Rei (Grand)", DARK],
+                ["Fist of Destruction", "Reinhardtzar (Grand)", FIRE],
                 ["Love Eternal", "Rosetta (Grand)", WIND],
                 ["Yahata's Naginata", "Leona (Grand)", EARTH],
-                ["Ouroboros Prime", "Cagliostro (Grand)", LIGHT]
+                ["Ouroboros Prime", "Cagliostro (Grand)", LIGHT],
+                ["Evanescence", "Narmaya (Grand)", WIND],
+                ["Atlantis", "Poseidon (Grand)", WATER]
                 ]
 
 zodiac_list = [["Dormius", "Andira", WIND],
@@ -257,7 +273,15 @@ summer_list = [["Nibelung Glas", "Alexiel (Summer)", EARTH],
                ["Official's Jitte", "Rosamia (Summer)", LIGHT],
                ["Surviving Lightning", "Albert (Summer)", WIND],
                ["Beach-Camouflage Vlisragna", "Silva (Summer)", EARTH],
-               ["My Little Mim", "Mimlemel (Summer)", FIRE]
+               ["My Little Mim", "Mimlemel (Summer)", FIRE],
+               ["Twelfth Vertex of the Passel", "Kumbhira (Summer)", FIRE],
+               ["Ninth Head of the Cartload", "Andira (Summer)", WATER],
+               ["Auriculata Bow", "Izmir (Yukata)", FIRE],
+               ["C'est la Vie", "Yngwie (Yukata)", WIND],
+               ["Ravening Harpoon", "Siegfried (Summer)", WATER],
+               ["Bubble Sketcher", "Illnot (Summer)", EARTH],
+               ["Aetherial Marine", "Metera (Summer)", EARTH],
+               ["Ursula Glove", "Meg (Summer)", DARK]
                ]
 
 halloween_list = [["Ouroboros Treat", "Cagliostro (Halloween)", DARK],
@@ -363,6 +387,9 @@ ssr_summon_list = [["Adramelech", LIGHT],
                    ["Zaoshen", FIRE],
                    ["Mammoth", EARTH],
                    ["Zirnitra", DARK],
+                   ["Tsuchinoko", EARTH],
+                   ["Wilnas", FIRE],
+                   ["Galleon", EARTH],
 
                    ["Agni", FIRE],
                    ["Bahamut", DARK],
@@ -386,20 +413,20 @@ ssr_summon_list = [["Adramelech", LIGHT],
                    ["Varuna", WATER],
                    ["Zepyhrus", WIND],
                    ["Zeus", LIGHT],
-                   ["Zirnitra", DARK],
-                   ["Tsuchinoko", EARTH]
                    ]
 
-summer_summon_list = [["Macula Marius (Summer)", WATER],
-                      ["Rose Queen (Summer)", WIND],
-                      ["Satyr (Summer)", FIRE],
-                      ["Yggdrasil (Summer)", EARTH],
-                      ["Athena (Summer)", FIRE],
-                      ["Freyr (Summer)", EARTH],
-                      ["Kaguya (Summer)", LIGHT]
+# Limited summer are listed in double as the rollspark command use the second value of list
+summer_summon_list = [["Macula Marius (Summer)", "Macula Marius (Summer)", WATER],
+                      ["Rose Queen (Summer)", "Rose Queen (Summer)", WIND],
+                      ["Satyr (Summer)", "Satyr (Summer)", FIRE],
+                      ["Yggdrasil (Summer)", "Yggdrasil (Summer)", EARTH],
+                      ["Athena (Summer)", "Athena (Summer)", FIRE],
+                      ["Freyr (Summer)", "Freyr (Summer)", EARTH],
+                      ["Kaguya (Summer)", "Kaguya (Summer)", LIGHT],
+                      ["Tiamat (Summer)", "Tiamat (Summer)", WIND]
                       ]
 
-xmas_summon_list = [["Sariel (Holiday)", DARK]
+xmas_summon_list = [["Sariel (Holiday)", "Sariel (Holiday)", DARK]
                     ]
 
 # Rates
@@ -519,3 +546,22 @@ class Gacha:
                 self.draw_result.append(self.get_single())
                 count += 1
         return self.draw_result
+
+    def get_spark(self):
+        """
+        Do get_ten 30x and return ssr list
+        """
+        self.draw_results = []
+        self.draw_result = []
+        for i in range(30):
+            self.draw_results.append(self.get_ten())  # Result is a list of list
+        # Convert list of list into a single list
+        self.draw_result = [item for sublist in self.draw_results for item in sublist]
+        '''
+        for sublist in self.draw_results:
+            for item in sublist:
+                self.draw_result.append(item)
+        '''
+        # Filter item in list by SSR only
+        ssr_result = [ssr for ssr in self.draw_result if ssr in self.ssr_perm_pool or ssr in self.limited_pool]
+        return ssr_result

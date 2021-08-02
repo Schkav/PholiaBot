@@ -58,34 +58,8 @@ async def choice(ctx, *choices):
     await ctx.send(response)
 
 
-@bot.command(name='roll', help='A single roll when you\'re scraping for crystal')
-async def roll1(ctx, *banners):
-    gacha = Gacha()
-    gacha.set_pool(banners)
-    draw = gacha.get_single()
-
-    if draw in gacha.ssr_summon_pool:
-        message = """```yaml
-You got {}```""".format(*draw)
-
-    elif draw in gacha.ssr_chara_pool or draw in gacha.limited_pool:
-        message = """```yaml
-You got the {}
-{} joined your party!
-```""".format(*draw)
-
-    elif draw in gacha.sr_pool:
-        message = """```You got {}```""".format(draw)
-
-    else:
-        message = """```brainfuck
-You got {}```""".format(draw)
-
-    await ctx.send(message)
-
-
-@bot.command(name='roll10', help='Do a 10 roll and hope you get bol')
-async def roll10(ctx, *banners):
+@bot.command(name='roll', help='Do a 10 roll and hope you get bol')
+async def roll(ctx, *banners):
     message = []
     gacha = Gacha()
     gacha.set_pool(banners)
@@ -108,6 +82,26 @@ You got the {}
         else:
             message.append("""```brainfuck
 You got {}```""".format(draw))
+
+    await ctx.send(''.join(message))
+
+
+@bot.command(name='rollspark', help='Do a 300 roll and hope you get your spark target')
+async def rollspark(ctx, *banners):
+    message = []
+    gacha = Gacha()
+    gacha.set_pool(banners)
+    results = gacha.get_spark()
+
+    message.append("""```css\n
+You got {} SSR in 300 rolls
+Including the following limiteds:```""".format(len(results)))
+
+    for draw in results:
+        if draw in gacha.limited_pool or draw in gacha.limited_pool:
+            message.append("""```yaml
+{}
+```""".format(draw[1]))
 
     await ctx.send(''.join(message))
 

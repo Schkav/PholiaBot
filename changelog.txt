@@ -1,3 +1,10 @@
+Ver 1.3.0
+02/08/2021
+-Added rollspark command.
+-Updated gacha pool up to 31/07/2021 banner.
+-Removed roll command.
+-Changed roll10 command into roll command.
+
 Ver 1.2.4
 15/02/2021
 -Updated gacha mechanic to rate up the limited banners.
