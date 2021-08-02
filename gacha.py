@@ -166,7 +166,20 @@ ssr_list = [["Thunder Dirk Jove", "Agielba", FIRE],
             ["Woodland Prayer", "Mishra", LIGHT],
             ["Miming's Baselard", "Zehek", DARK],
             ["Heart of a Songbird", "Lamretta", EARTH],
-            ["Raijodo", "Nectar", WIND]
+            ["Raijodo", "Nectar", WIND],
+            ["Grynoth Demiclone", "Vaseraga (Fire)", FIRE],
+            ["Arvess Demiclone", "Zeta (Water)", WATER],
+            ["Bravery", "Farrah and Juri", LIGHT],
+            ["Plasma Slicer", "Isaac", WATER],
+            ["Embrasque Demiclone", "Beatrix (Earth)", EARTH],
+            ["Bonsai Blade", "Shion", FIRE],
+            ["Flamelance: Accendo", "Nezha", WIND],
+            ["Schwarz Lightning", "Albert (Dark)", DARK],
+            ["Reveiller", "Troue", WATER],
+            ["Lancet", "Tikoh", LIGHT],
+            ["Charming Broom", "Ms. Miranda", FIRE],
+            ["Destiny Knuckles", "Sho", WIND],
+            ["Merveilleux", "Lennah (Earth)", EARTH],
             ]
 
 flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
@@ -185,7 +198,8 @@ flashfest_list = [["Mirror-Blade Shard", "Alexiel", EARTH],
                   ["Certificus", "Vira (Grand)", LIGHT],
                   ["Cute Ribbon", "Zooey (Grand)", DARK],
                   ["Cerastes", "Golden Knight", EARTH],
-                  ["World Ender", "Sandalphon", EARTH]
+                  ["World Ender", "Sandalphon", EARTH],
+                  ["Radiant Rinne", "Nehan", LIGHT]
                   ]
 
 legfest_list = [["Ichigo Hitofuri", "Cain", EARTH],
@@ -202,7 +216,9 @@ legfest_list = [["Ichigo Hitofuri", "Cain", EARTH],
                 ["Fist of Destruction", "Reinhardtzar", FIRE],
                 ["Love Eternal", "Rosetta (Grand)", WIND],
                 ["Yahata's Naginata", "Leona (Grand)", EARTH],
-                ["Ouroboros Prime", "Cagliostro (Grand)", LIGHT]
+                ["Ouroboros Prime", "Cagliostro (Grand)", LIGHT],
+                ["Evanescence", "Narmaya (Grand)", WIND],
+                ["Atlantis", "Poseidon", WATER]
                 ]
 
 zodiac_list = [["Dormius", "Andira", WIND],
@@ -257,7 +273,15 @@ summer_list = [["Nibelung Glas", "Alexiel (Summer)", EARTH],
                ["Official's Jitte", "Rosamia (Summer)", LIGHT],
                ["Surviving Lightning", "Albert (Summer)", WIND],
                ["Beach-Camouflage Vlisragna", "Silva (Summer)", EARTH],
-               ["My Little Mim", "Mimlemel (Summer)", FIRE]
+               ["My Little Mim", "Mimlemel (Summer)", FIRE],
+               ["Twelfth Vertex of the Passel", "Kumbhira (Summer)", FIRE],
+               ["Ninth Head of the Cartload", "Andira (Summer)", WATER],
+               ["Auriculata Bow", "Izmir (Yukata)", FIRE],
+               ["C'est la Vie", "Yngwie (Yukata)", WIND],
+               ["Ravening Harpoon", "Siegfried (Summer)", WATER],
+               ["Bubble Sketcher", "Illnot (Summer)", EARTH],
+               ["Aetherial Marine", "Metera (Summer)", EARTH],
+               ["Ursula Glove", "Meg (Summer)", DARK]
                ]
 
 halloween_list = [["Ouroboros Treat", "Cagliostro (Halloween)", DARK],
@@ -363,6 +387,9 @@ ssr_summon_list = [["Adramelech", LIGHT],
                    ["Zaoshen", FIRE],
                    ["Mammoth", EARTH],
                    ["Zirnitra", DARK],
+                   ["Tsuchinoko", EARTH]
+                   ["Wilnas", FIRE],
+                   ["Galleon", EARTH],
 
                    ["Agni", FIRE],
                    ["Bahamut", DARK],
@@ -386,8 +413,6 @@ ssr_summon_list = [["Adramelech", LIGHT],
                    ["Varuna", WATER],
                    ["Zepyhrus", WIND],
                    ["Zeus", LIGHT],
-                   ["Zirnitra", DARK],
-                   ["Tsuchinoko", EARTH]
                    ]
 
 summer_summon_list = [["Macula Marius (Summer)", WATER],
@@ -396,7 +421,8 @@ summer_summon_list = [["Macula Marius (Summer)", WATER],
                       ["Yggdrasil (Summer)", EARTH],
                       ["Athena (Summer)", FIRE],
                       ["Freyr (Summer)", EARTH],
-                      ["Kaguya (Summer)", LIGHT]
+                      ["Kaguya (Summer)", LIGHT],
+                      ["Tiamat (Summer), WIND"]
                       ]
 
 xmas_summon_list = [["Sariel (Holiday)", DARK]
