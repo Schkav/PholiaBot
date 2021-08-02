@@ -59,7 +59,7 @@ async def choice(ctx, *choices):
 
 
 @bot.command(name='roll', help='Do a 10 roll and hope you get bol')
-async def roll10(ctx, *banners):
+async def roll(ctx, *banners):
     message = []
     gacha = Gacha()
     gacha.set_pool(banners)
