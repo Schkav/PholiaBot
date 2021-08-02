@@ -86,6 +86,26 @@ You got {}```""".format(draw))
     await ctx.send(''.join(message))
 
 
+@bot.command(name='rollspark', help='Do a 300 roll and hope you get your spark target')
+async def rollspark(ctx, *banners):
+    message = []
+    gacha = Gacha()
+    gacha.set_pool(banners)
+    results = gacha.get_spark()
+
+    message.append("""```css\n
+You got {} SSR in 300 rolls
+Including the following limiteds:```""".format(len(results)))
+
+    for draw in results:
+        if draw in gacha.limited_pool or draw in gacha.limited_pool:
+            message.append("""```yaml
+{}
+```""".format(draw[1]))
+
+    await ctx.send(''.join(message))
+
+
 @bot.command(name='feedback', help='Send feedback or bug report message to bot owner', aliases=['bugreport'], pass_context=True)
 async def feedback(ctx, *messages):
     feedback_message = " ".join(messages)
