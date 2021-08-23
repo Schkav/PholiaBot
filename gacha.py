@@ -281,7 +281,11 @@ summer_list = [["Nibelung Glas", "Alexiel (Summer)", EARTH],
                ["Ravening Harpoon", "Siegfried (Summer)", WATER],
                ["Bubble Sketcher", "Illnot (Summer)", EARTH],
                ["Aetherial Marine", "Metera (Summer)", EARTH],
-               ["Ursula Glove", "Meg (Summer)", DARK]
+               ["Ursula Glove", "Meg (Summer)", DARK],
+               ["Bitternote Sun", "Zahlhamelina (Yukata)", LIGHT],
+               ["Tahar Masala", "Tabina (Summer)", DARK],
+               ["Zodiaco Vitae", "Helel ben Shalem (Summer)", WATER],
+               ["Impossible Diagram", "Shiva (Summer)", LIGHT]
                ]
 
 halloween_list = [["Ouroboros Treat", "Cagliostro (Halloween)", DARK],
@@ -423,14 +427,15 @@ summer_summon_list = [["Macula Marius (Summer)", "Macula Marius (Summer)", WATER
                       ["Athena (Summer)", "Athena (Summer)", FIRE],
                       ["Freyr (Summer)", "Freyr (Summer)", EARTH],
                       ["Kaguya (Summer)", "Kaguya (Summer)", LIGHT],
-                      ["Tiamat (Summer)", "Tiamat (Summer)", WIND]
+                      ["Tiamat (Summer)", "Tiamat (Summer)", WIND],
+                      ["Mandrake (Summer)", "Mandrake (Summer)", EARTH]
                       ]
 
 xmas_summon_list = [["Sariel (Holiday)", "Sariel (Holiday)", DARK]
                     ]
 
 # Rates
-LIMITED_RATE_UP = 0.025
+LIMITED_RATE_UP = 0.015
 SSR_RATE = 0.03
 SR_RATE = 0.15
 R_RATE = 0.82
