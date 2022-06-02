@@ -1,436 +1,81 @@
+import csv
 import random
-FIRE = "fire"
-WATER = "water"
-EARTH = "earth"
-WIND = "wind"
-LIGHT = "light"
-DARK = "dark"
 
 
+with open('perm_chara_list.csv') as csv_file:  # Open csv file
+    perm_reader = csv.reader(csv_file)  # Read csv file
+    next(perm_reader, None)  # Skip first line
+    ssr_list = list(perm_reader)  # Convert read csv into list type
 
-ssr_list = [["Thunder Dirk Jove", "Agielba", FIRE],
-            ["Gottfried", "Aglovale", WATER],
-            ["Hauteclaire", "Albert", LIGHT],
-            ["Greatsword Andalius", "Aletheia", EARTH],
-            ["Magma Gauntlet", "Aliza", FIRE],
-            ["Dainsleif", "Altair", WATER],
-            ["Dragon Slayer", "Amira", LIGHT],
-            ["Daemon's Spine", "Anne", WATER],
-            ["Forbidden Inferno", "Anthuria", FIRE],
-            ["Way Flyer", "Aoidos", FIRE],
-            ["Cords of Heaven Lillah", "Arriet", WIND],
-            ["Gargantua", "Arulumaya", EARTH],
-            ["Sacred Lance", "Athena", FIRE],
-            ["Ancient Bandages", "Ayer", EARTH],
-            ["Shadow Viperlance", "Azazel", DARK],
-            ["Spymur's Clause", "Baal", EARTH],
-            ["Symbol of Justice", "Baotorda", LIGHT],
-            ["Gram", "Beatrix", DARK],
-            ["Ouroboros", "Cagliostro", EARTH],
-            ["Black Ouroboros", "Cagliostro", DARK],
-            ["Turpin Spear", "Carmelina", WIND],
-            ["Arsene", "Catherine", EARTH],
-            ["Coco & Mimi", "Cerberus", DARK],
-            ["Claíomh Solais", "Charlotta", WATER],
-            ["Claidheamh Soluis", "Charlotta", LIGHT],
-            ["Phantom Thief Blade", "Chat Noir", WATER],
-            ["Mobius Strip", "Clarisse", FIRE],
-            ["Fusion Mobius", "Clarisse", LIGHT],
-            ["Metal Destroyer", "Colossus", FIRE],
-            ["White Hawk", "Cucouroux", WATER],
-            ["Neko Punch Pro", "Dante and Freiheit", EARTH],
-            ["Spectral Cleaver", "Danua", LIGHT],
-            ["Kerykeion", "De La Fille", LIGHT],
-            ["Thyrsus", "De La Fille", EARTH],
-            ["Gothic Cutlery", "Dorothy and Claudia", LIGHT],
-            ["Red Sphere", "Drang", FIRE],
-            ["Stratomizer", "Eustace", EARTH],
-            ["Ishtar", "Eustace", DARK],
-            ["Heroic Bow", "Feena", WIND],
-            ["Ethereal Lasher", "Ferry", LIGHT],
-            ["Skyrend Spear", "Forte", DARK],
-            ["Arachne", "Freezie", DARK],
-            ["Windflash", "Gawain", WIND],
-            ["Brahma Gauntlet", "Ghandagoza", FIRE],
-            ["Draco Claw", "Grea", FIRE],
-            ["Soul Eater", "Hallesena", EARTH],
-            ["Luin", "Heles", FIRE],
-            ["Deirdre's Symbol", "Heles", WIND],
-            ["Great Spear", "Herja", EARTH],
-            ["Mystic Spray Gun", "Illnott", FIRE],
-            ["Gandiva", "Ilsa", EARTH],
-            ["Takeminakata", "Ilsa", LIGHT],
-            ["Nagelring", "Izmir", WATER],
-            ["Caladbolg", "Jeanne d'Arc", LIGHT],
-            ["Disparia", "Jeanne d'Arc", DARK],
-            ["Soshu Masamune", "Jin", EARTH],
-            ["Capulet's Oath", "Juliet", LIGHT],
-            ["Vagabond", "Kolulu", DARK],
-            ["Wing of the Pure", "Korwa", WIND],
-            ["Juzumaru", "Kou", DARK],
-            ["Rainbow Hand", "Ladiva", EARTH],
-            ["Ukonvasara", "Lady Grey", DARK],
-            ["Metal Hand", "Lady Katapillar and Vira", WATER],
-            ["Hoarfrost Blade Persius", "Lancelot", WATER],
-            ["Heiliges Schwert", "Lancelot", WIND],
-            ["Feendrache Pennant", "Lancelot and Vane", FIRE],
-            ["Commander's Sidearm", "Lecia", WATER],
-            ["Far Away", "Lennah", WIND],
-            ["Levin Shooter", "Levin Sisters", LIGHT],
-            ["Melodic Sphere", "Lilele", WATER],
-            ["Ice Crystal Staff", "Lily", WATER],
-            ["Alabaster Zenith", "Lucius", DARK],
-            ["Ruling Pen", "Lunalu", DARK],
-            ["Froststar Staff", "Macula Marius", DARK],
-            ["Illusion Scepter", "Magisa", FIRE],
-            ["Gridarvor", "Marquiares", DARK],
-            ["Euripides", "Medusa", EARTH],
-            ["Split End", "Melissabelle", WIND],
-            ["Vassago", "Melleau", EARTH],
-            ["Aetherial Bow", "Metera", WIND],
-            ["Roseate Aetherial Bow", "Metera", FIRE],
-            ["Acid Bolt Shooter", "Milleore and Sahli Lao", WATER],
-            ["Trí Bandia", "Morrigna", WIND],
-            ["Venustas", "Narmaya", DARK],
-            ["Mettle", "Nemone", EARTH],
-            ["Pilum", "Nezahualpilli", WIND],
-            ["Gigante Slicer", "Nicholas", DARK],
-            ["Lohengrin", "Percival", FIRE],
-            ["Walthari", "Percival", LIGHT],
-            ["Heaven's Cloud", "Petra", WIND],
-            ["Predator Claw", "Predator", DARK],
-            ["Gae Derg", "Razia", EARTH],
-            ["Railgun", "Robomi", LIGHT],
-            ["Montague's Oath", "Romeo", WATER],
-            ["Twin Helix", "Rosamia", LIGHT],
-            ["Sandcastle Song-Lume", "Sara", EARTH],
-            ["Eon", "Sara", LIGHT],
-            ["Sealed Claustrum", "Sarunan", LIGHT],
-            ["Kalaurops", "Sarunan", DARK],
-            ["Sikinnis", "Satyr", FIRE],
-            ["Deirdre's Claws", "Scathacha", WIND],
-            ["Cythara Anglica", "Selfira", WIND],
-            ["Galactic Impact", "Sen", WIND],
-            ["Hrotti", "Seruel", LIGHT],
-            ["Iridescent Bow", "Shitori", LIGHT],
-            ["Teiwaz", "Shura", WATER],
-            ["Ascalon", "Siegfried", EARTH],
-            ["Black Dragon's Maw", "Siegfried", FIRE],
-            ["Vlisragna", "Silva", WATER],
-            ["Full Metal Recoil", "Silva", LIGHT],
-            ["Scarlet Vane", "Societte", WATER],
-            ["Blushing Blossom Pin", "Societte", FIRE],
-            ["Cardinal Spear", "Societte", WIND],
-            ["Ocean Harp", "Sophia", LIGHT],
-            ["Wyrmtiger Claw", "Soriz", EARTH],
-            ["Golden Dragon", "Stan and Aliza", WIND],
-            ["Proelium", "Sturm", WATER],
-            ["Hand Axe", "Tabina", FIRE],
-            ["Gandring", "Tanya", DARK],
-            ["Tanzanite Blade", "Therese", FIRE],
-            ["Tiamat Bolt Prime", "Tiamat", WIND],
-            ["Two-by-Four", "Tsubasa", FIRE],
-            ["Blossom Axe", "Vane", WATER],
-            ["Azoth", "Vania", DARK],
-            ["Plushie Pal", "Vania and Malinda", WATER],
-            ["Mistilteinn", "Vaseraga", DARK],
-            ["Wurtzite Scythe", "Vaseraga", EARTH],
-            ["Bloody Scar", "Veight", DARK],
-            ["Lyst Sin", "Vira", DARK],
-            ["Another Sky", "Vira", WIND],
-            ["Master Key", "Wulf and Renie", DARK],
-            ["Bella Aeterna", "Yggdrasil", EARTH],
-            ["Meteora", "Yngwie", WATER],
-            ["Fudo-Kuniyuki", "Yodarha", WATER],
-            ["True Tiger's Bane", "Yodarha", WIND],
-            ["Scarlet Crest Axe", "Yuel", FIRE],
-            ["Izayoi", "Yuel", WATER],
-            ["Yyrkoon", "Yuisis", WIND],
-            ["Gangsta Knife", "Yuisis", FIRE],
-            ["Returner Staff", "Yurius", WIND],
-            ["Starblaze Rings", "Zahlhamelina", FIRE],
-            ["Brionac", "Zeta", FIRE],
-            ["Sunspot Spear", "Zeta", DARK],
-            ["Ruler of Fate", "Zooey", LIGHT],
-            ["Tiny Logger's Axe", "Abby", FIRE],
-            ["Ophelia", "Juliet (Water)", WATER],
-            ["Brand New Melody", "Diantha (Earth)", EARTH],
-            ["Disturbance Signum", "Florence", WIND],
-            ["Tabarzin", "Gawain (Light)", LIGHT],
-            ["Innocent Doll", "Mireille and Risette", EARTH],
-            ["Aurora Bow", "Sutera", WIND],
-            ["Barbell", "Fiorito", EARTH],
-            ["Hope-Filled Knuckles", "Feather", LIGHT],
-            ["Whitefrost Glacier", "Filene", WATER],
-            ["Gigante Bisector", "Nicholas (Light)", LIGHT],
-            ["Woodland Prayer", "Mishra", LIGHT],
-            ["Miming's Baselard", "Zehek", DARK],
-            ["Heart of a Songbird", "Lamretta", EARTH],
-            ["Raijodo", "Nectar", WIND],
-            ["Grynoth Demiclone", "Vaseraga (Fire)", FIRE],
-            ["Arvess Demiclone", "Zeta (Water)", WATER],
-            ["Bravery", "Farrah and Juri", LIGHT],
-            ["Plasma Slicer", "Isaac", WATER],
-            ["Embrasque Demiclone", "Beatrix (Earth)", EARTH],
-            ["Bonsai Blade", "Shion", FIRE],
-            ["Flamelance: Accendo", "Nezha", WIND],
-            ["Schwarz Lightning", "Albert (Dark)", DARK],
-            ["Reveiller", "Troue", WATER],
-            ["Lancet", "Tikoh", LIGHT],
-            ["Charming Broom", "Ms. Miranda", FIRE],
-            ["Destiny Knuckles", "Sho", WIND],
-            ["Merveilleux", "Lennah (Earth)", EARTH],
-            ]
+with open('flash_chara_list.csv') as csv_file:
+    flash_reader = csv.reader(csv_file)
+    next(flash_reader, None)
+    flashfest_list = list(flash_reader)
 
-flashfest_list = [["Mirror-Blade Shard", "Alexiel (Grand)", EARTH],
-                  ["Blutgang", "Black Knight (Grand)", DARK],
-                  ["Blue Sphere", "Drang (Grand)", WATER],
-                  ["Galilei's Insight", "Europa (Grand)", WATER],
-                  ["Vortex of the Void", "Grimnir (Grand)", WIND],
-                  ["Bab-el-Mandeb", "Helel ben Shalem (Grand)", DARK],
-                  ["Sacred Standard", "Jeanne d'Arc (Grand)", LIGHT],
-                  ["Eden", "Lucio (Grand)", LIGHT],
-                  ["Kerak", "Mugen (Grand)", FIRE],
-                  ["Fallen Sword", "Olivia (Grand)", DARK],
-                  ["Parazonium", "Orchid (Grand)", DARK],
-                  ["Purifying Thunderbolt", "Shiva (Grand)", FIRE],
-                  ["Ixaba", "Sturm (Grand)", FIRE],
-                  ["Certificus", "Vira (Grand)", LIGHT],
-                  ["Cute Ribbon", "Zooey (Grand)", DARK],
-                  ["Cerastes", "Golden Knight (Grand)", EARTH],
-                  ["World Ender", "Sandalphon (Grand)", EARTH],
-                  ["Radiant Rinne", "Nehan (Grand)", LIGHT]
-                  ]
+with open('leg_chara_list.csv') as csv_file:
+    leg_reader = csv.reader(csv_file)
+    next(leg_reader, None)
+    legfest_list = list(leg_reader)
 
-legfest_list = [["Ichigo Hitofuri", "Cain (Grand)", EARTH],
-                ["AK-4A", "Eugen (Grand)", EARTH],
-                ["Unheil", "Ferry (Grand)", DARK],
-                ["Gambanteinn", "Io (Grand)", LIGHT],
-                ["Murgleis", "Katalina (Grand)", WATER],
-                ["Reunion", "Lecia (Grand)", WIND],
-                ["Sky Ace", "Monika (Grand)", WIND],
-                ["Ivory Ark", "Noa (Grand)", LIGHT],
-                ["Taisai Spirit Bow", "Pholia (Grand)", WATER],
-                ["Benedia", "Rackam (Grand)", FIRE],
-                ["Sunya", "Rei (Grand)", DARK],
-                ["Fist of Destruction", "Reinhardtzar (Grand)", FIRE],
-                ["Love Eternal", "Rosetta (Grand)", WIND],
-                ["Yahata's Naginata", "Leona (Grand)", EARTH],
-                ["Ouroboros Prime", "Cagliostro (Grand)", LIGHT],
-                ["Evanescence", "Narmaya (Grand)", WIND],
-                ["Atlantis", "Poseidon (Grand)", WATER]
-                ]
+with open('zodiac_list.csv') as csv_file:
+    zodiac_reader = csv.reader(csv_file)
+    next(zodiac_reader, None)
+    zodiac_list = list(zodiac_reader)
 
-zodiac_list = [["Dormius", "Andira", WIND],
-               ["Ramulus", "Anila", FIRE],
-               ["Porculius", "Kumbhira", LIGHT],
-               ["Gallinarius", "Mahira", EARTH],
-               ["Canisius", "Vajra", WATER],
-               ["Rodentius", "Vikala", DARK],
-               ["Bovinius", "Catura", WIND]
-               ]
+with open('valentine_list.csv') as csv_file:
+    valentine_reader = csv.reader(csv_file)
+    next(valentine_reader, None)
+    valentine_list = list(valentine_reader)
 
-valentine_list = [["Silphium", "Clarisse (Valentine)", DARK],
-                  ["Lupercalia", "Grimnir (Valentine)", WIND],
-                  ["Medusiana Staff", "Medusa (Valentine)", EARTH],
-                  ["Sword on the Cob", "Melissabelle (Valentine)", LIGHT],
-                  ["Deirdre's Heart", "Scathacha (Valentine)", FIRE],
-                  ["Lovely Ace", "Monika (Valentine)", EARTH],
-                  ["Wales' Finest", "Aglovale (Valentine)", LIGHT]
-                  ]
+with open('summer_chara_list.csv') as csv_file:
+    summer_reader = csv.reader(csv_file)
+    next(summer_reader, None)
+    summer_list = list(summer_reader)
 
-summer_list = [["Nibelung Glas", "Alexiel (Summer)", EARTH],
-               ["Forbidden Memories", "Anthuria (Summer)", DARK],
-               ["Delta Quartz", "Beatrix (Summer)", FIRE],
-               ["Only for a Cutie", "Cagliostro (Summer)", WATER],
-               ["Mikazuki", "Dauna (Summer)", DARK],
-               ["Diamond Edge", "De La Fille (Summer)", LIGHT],
-               ["Tlepilli", "Diantha (Summer)", WATER],
-               ["Crystal Bellflowers", "Europa (Summer)", WATER],
-               ["Draco Horn", "Grea (Summer)", WATER],
-               ["Sharp Letter", "Halluel and Malluel", LIGHT],
-               ["Crystal Luin", "Heles (Summer)", LIGHT],
-               ["Arjunan Bow", "Ilsa (Summer)", FIRE],
-               ["Sunflower Wand", "Io (Summer)", FIRE],
-               ["Frostbite", "Izmir (Summer)", WATER],
-               ["Orleans Standard", "Jeanne d'Arc (Summer)", WIND],
-               ["Midnight Radiance", "Jessica (Summer)", EARTH],
-               ["Bell of Happy Endings", "Korwa (Summer)", WIND],
-               ["Conifer", "Naoise (Summer)", LIGHT],
-               ["Raikiri", "Narmaya (Summer)", WATER],
-               ["Antwerp", "Percival (Summer)", FIRE],
-               ["Thorny Rose", "Rosetta (Summer)", EARTH],
-               ["Ain Soph", "Sandalphon (Summer)", WATER],
-               ["Sinensis", "Siegfried (Summer)", WIND],
-               ["Tropical Fairy", "Teena (Summer)", FIRE],
-               ["Deep Desire", "Vira (Summer)", EARTH],
-               ["Crimson Sapphire", "Yuel (Summer)", WIND],
-               ["Cletine", "Zeta (Summer)", LIGHT],
-               ["Much Ado", "Kolulu (Summer)", WATER],
-               ["Dayspring", "Lucio (Summer)", WATER],
-               ["Summer Genesis", "Amira (Summer)", DARK],
-               ["Eight Point of the Flock", "Anila (Summer)", WIND],
-               ["Official's Jitte", "Rosamia (Summer)", LIGHT],
-               ["Surviving Lightning", "Albert (Summer)", WIND],
-               ["Beach-Camouflage Vlisragna", "Silva (Summer)", EARTH],
-               ["My Little Mim", "Mimlemel (Summer)", FIRE],
-               ["Twelfth Vertex of the Passel", "Kumbhira (Summer)", FIRE],
-               ["Ninth Head of the Cartload", "Andira (Summer)", WATER],
-               ["Auriculata Bow", "Izmir (Yukata)", FIRE],
-               ["C'est la Vie", "Yngwie (Yukata)", WIND],
-               ["Ravening Harpoon", "Siegfried (Summer)", WATER],
-               ["Bubble Sketcher", "Illnot (Summer)", EARTH],
-               ["Aetherial Marine", "Metera (Summer)", EARTH],
-               ["Ursula Glove", "Meg (Summer)", DARK]
-               ]
+with open('halloween_chara_list.csv') as csv_file:
+    halloween_reader = csv.reader(csv_file)
+    next(halloween_reader, None)
+    halloween_list = list(halloween_reader)
 
-halloween_list = [["Ouroboros Treat", "Cagliostro (Halloween)", DARK],
-                  ["Jack-O'-Brand", "Charlotta (Halloween)", LIGHT],
-                  ["Snack Pole", "Danua (Halloween)", FIRE],
-                  ["Nightmare Mobilizer", "Eustace (Halloween)", EARTH],
-                  ["Spirit Seeker", "Hallessena (Halloween)", LIGHT],
-                  ["Distant Requiem", "Lady Grey (Halloween)", DARK],
-                  ["Enchanted Broomstick", "Zeta and Vaseraga (Halloween)", EARTH],
-                  ["Trick Serpent", "Azazel (Halloween)", FIRE],
-                  ["Midnight Rose", "Rosetta (Halloween)", WATER]
-                  ]
+with open('xmas_chara_list.csv') as csv_file:
+    xmas_reader = csv.reader(csv_file)
+    next(xmas_reader, None)
+    xmas_list = list(xmas_reader)
 
-xmas_list = [["Stardust Holly Rod", "Arulumaya (Holiday)", WATER],
-             ["Snowy Mobius Strip", "Clarisse (Holiday)", EARTH],
-             ["Holy Night Scepter", "Magisa (Holiday)", EARTH],
-             ["Jolly Starcracker", "Mary (Holiday)", LIGHT],
-             ["Ray Gun", "Meteon (Holiday)", WIND],
-             ["Pinkie Needle", "Metera (Holiday)", LIGHT],
-             ["Blade of Purification", "Narmaya (Holiday)", EARTH],
-             ["Rosen Maiden", "Rosetta (Holiday)", DARK],
-             ["Brand of Binding Oath", "Seruel (Holiday)", WIND],
-             ["Tropical Winter", "Nemone (Holiday)", FIRE],
-             ["Snowbane", "Mirin (Holiday)", WATER],
-             ["Saintly Crystal", "Lily (Holiday)", LIGHT]
-             ]
+with open('sr_list.csv') as csv_file:
+    sr_reader = csv.reader(csv_file)
+    next(sr_reader, None)
+    sr_list = []
+    for row in sr_reader:
+        sr_list.append(row[0])
 
-sr_list = ["SR character",
-           "SR summon",
-           "SR dupe",
-           "SR dupe",
-           "SR dupe"]
+with open('r_list.csv') as csv_file:
+    r_reader = csv.reader(csv_file)
+    next(r_reader, None)
+    r_list = []
+    for row in r_reader:
+        r_list.append(row[0])
 
-r_list = ["R character",
-          "R summon",
-          "R dupe",
-          "R dupe",
-          "R dupe",
-          "R dupe",
-          "R dupe",
-          "R dupe",
-          "R dupe",
-          "R dupe"]
 
-ssr_summon_list = [["Adramelech", LIGHT],
-                   ["Anat, for Love and War", WIND],
-                   ["Ankusha", EARTH],
-                   ["Anubis", DARK],
-                   ["Aphrodite", LIGHT],
-                   ["Apollo", LIGHT],
-                   ["Athena", FIRE],
-                   ["Baal", EARTH],
-                   ["Bonito", WATER],
-                   ["Ca Ong", WATER],
-                   ["Cerberus, Hellhound Trifecta", DARK],
-                   ["Charybdis", WATER],
-                   ["Cybele", EARTH],
-                   ["Dark Angel Olivia", DARK],
-                   ["Demonbream", WIND],
-                   ["Dogu", EARTH],
-                   ["Freyr", WIND],
-                   ["Garuda", WIND],
-                   ["Garula, Shining Hawk", WIND],
-                   ["Gilgamesh", EARTH],
-                   ["Gorilla", EARTH],
-                   ["Grani", WATER],
-                   ["Hamsa", WIND],
-                   ["Hector", LIGHT],
-                   ["Heimdallr", LIGHT],
-                   ["Lich", DARK],
-                   ["Macula Marius", WATER],
-                   ["Magus, Triad of Wisdom", LIGHT],
-                   ["Marduk, Battlefield Reaper", EARTH],
-                   ["Medusa", EARTH],
-                   ["Morrigna", WIND],
-                   ["Nacht", DARK],
-                   ["Neptune", WATER],
-                   ["Nezha", WIND],
-                   ["Nyarlathotep", DARK],
-                   ["Oceanus", WATER],
-                   ["Odin", LIGHT],
-                   ["Owlcat", WIND],
-                   ["Poseidon, the Tide Father", WATER],
-                   ["Princess Long Ji", WATER],
-                   ["Prometheus", FIRE],
-                   ["Quetzalcoatl", WIND],
-                   ["Red Hare", FIRE],
-                   ["Rose Queen", WIND],
-                   ["Satan", DARK],
-                   ["Satyr", FIRE],
-                   ["Setekh", WIND],
-                   ["Sethlans", FIRE],
-                   ["Siren", WIND],
-                   ["Snow White", WATER],
-                   ["Surtr", FIRE],
-                   ["Sylph, Flutterspirit of Purity", FIRE],
-                   ["Tezcatlipoca", EARTH],
-                   ["Thor", LIGHT],
-                   ["Tsukuyomi", DARK],
-                   ["Twin Elements", FIRE],
-                   ["Typhon", DARK],
-                   ["Vortex Dragon", LIGHT],
-                   ["Zaoshen", FIRE],
-                   ["Mammoth", EARTH],
-                   ["Zirnitra", DARK],
-                   ["Tsuchinoko", EARTH],
-                   ["Wilnas", FIRE],
-                   ["Galleon", EARTH],
+with open('perm_summon_list.csv') as csv_file:
+    perm_summon_reader = csv.reader(csv_file)
+    next(perm_summon_reader, None)
+    ssr_summon_list = list(perm_summon_reader)
 
-                   ["Agni", FIRE],
-                   ["Bahamut", DARK],
-                   ["Belial", DARK],
-                   ["Europa", WATER],
-                   ["Gabriel", WATER],
-                   ["Godsworn Alexiel", EARTH],
-                   ["Grand Order", LIGHT],
-                   ["Grimnir", WIND],
-                   ["Hades", DARK],
-                   ["Halluel and Malluel", LIGHT],
-                   ["Kaguya", WATER],
-                   ["Lucifer", " light"],
-                   ["Metatron", LIGHT],
-                   ["Michael", FIRE],
-                   ["Raphael", WIND],
-                   ["Sariel", DARK],
-                   ["Shiva", FIRE],
-                   ["Titan", EARTH],
-                   ["Uriel", EARTH],
-                   ["Varuna", WATER],
-                   ["Zepyhrus", WIND],
-                   ["Zeus", LIGHT],
-                   ]
+# Limited summons are listed in double as the rollspark command use the second value of list
+with open('summer_summon_list.csv') as csv_file:
+    summer_summon_reader = csv.reader(csv_file)
+    next(summer_summon_reader, None)
+    summer_summon_list = list(summer_summon_reader)
 
-# Limited summer are listed in double as the rollspark command use the second value of list
-summer_summon_list = [["Macula Marius (Summer)", "Macula Marius (Summer)", WATER],
-                      ["Rose Queen (Summer)", "Rose Queen (Summer)", WIND],
-                      ["Satyr (Summer)", "Satyr (Summer)", FIRE],
-                      ["Yggdrasil (Summer)", "Yggdrasil (Summer)", EARTH],
-                      ["Athena (Summer)", "Athena (Summer)", FIRE],
-                      ["Freyr (Summer)", "Freyr (Summer)", EARTH],
-                      ["Kaguya (Summer)", "Kaguya (Summer)", LIGHT],
-                      ["Tiamat (Summer)", "Tiamat (Summer)", WIND]
-                      ]
+with open('xmas_summon_list.csv') as csv_file:
+    xmas_summon_reader = csv.reader(csv_file)
+    next(xmas_summon_reader, None)
+    xmas_summon_list = list(xmas_summon_reader)
 
-xmas_summon_list = [["Sariel (Holiday)", "Sariel (Holiday)", DARK]
-                    ]
 
 # Rates
-LIMITED_RATE_UP = 0.025
+LIMITED_RATE_UP = 0.015
 SSR_RATE = 0.03
 SR_RATE = 0.15
 R_RATE = 0.82
@@ -483,7 +128,7 @@ class Gacha:
                 self.ssr_rate = SSR_RATE * 2
             elif pool.lower() == "all":
                 self.limited_pool = self.limited_pool + flashfest_list + legfest_list + zodiac_list + \
-                                summer_list + summer_summon_list + xmas_list + halloween_list + xmas_summon_list
+                                    summer_list + summer_summon_list + xmas_list + halloween_list + xmas_summon_list
                 self.ssr_rate = SSR_RATE * 2
             elif pool.lower() == "mukku":
                 self.ssr_rate = SSR_RATE * 5
@@ -509,11 +154,11 @@ class Gacha:
                 return random.choice(list(self.r_pool))
         else:
             if random.random() < self.ssr_rate:
-                return random.choice(list(self.ssr_perm_pool))
+                return random.choice(self.ssr_perm_pool)
             elif random.random() < SR_RATE:
-                return random.choice(list(self.sr_pool))
+                return random.choice(self.sr_pool)
             else:
-                return random.choice(list(self.r_pool))
+                return random.choice(self.r_pool)
 
     def get_last_draw(self):
         """
